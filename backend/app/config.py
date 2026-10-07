@@ -32,9 +32,14 @@ class Settings:
             if o.strip()
         )
     )
+    # Flood limit, every kind of answer: beyond it a visitor gets 429 (no human asks that fast).
     rate_limit_per_ip: int = field(default_factory=lambda: _int("RATE_LIMIT_PER_IP", 20))
     rate_limit_window: int = field(default_factory=lambda: _int("RATE_LIMIT_WINDOW_SECONDS", 600))
-    daily_cap: int = field(default_factory=lambda: _int("DAILY_REQUEST_CAP", 400))
+    daily_cap: int = field(default_factory=lambda: _int("DAILY_REQUEST_CAP", 2000))
+    # AI answers (the only ones that cost money) per visitor and in total per UTC day; beyond
+    # them, visitors get the closest prepared answer instead.
+    ai_quota_per_ip: int = field(default_factory=lambda: _int("AI_QUOTA_PER_IP_PER_DAY", 10))
+    ai_answers_per_day: int = field(default_factory=lambda: _int("AI_ANSWERS_PER_DAY", 150))
     trust_proxy: bool = field(
         default_factory=lambda: os.getenv("TRUST_PROXY_HEADERS", "false").lower() == "true"
     )
@@ -55,9 +60,8 @@ class Settings:
     )
     max_message_chars: int = 600  # the visitor's newest question
     max_conversation_chars: int = 6000  # everything sent along: no huge fake histories
-    max_history_turns: int = 8
-    max_output_tokens: int = 700
-    max_tool_rounds: int = 3
+    max_history_messages: int = 5  # sent to the model: the question and the two turns before it
+    max_output_tokens: int = 350  # about 250 words: enough for 2-4 sentences in any language
 
 
 def get_settings() -> Settings:

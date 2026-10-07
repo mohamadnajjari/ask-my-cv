@@ -35,3 +35,33 @@ class RateLimiter:
             q.append(now)
             self.day_count += 1
             return None
+
+
+class DailyQuota:
+    """How many AI answers each visitor (and everyone together) may get per UTC day.
+
+    Prepared and cached answers don't count: they cost nothing. When a quota is used up, the
+    visitor gets prepared answers instead of an error, so overuse costs nothing either.
+    """
+
+    def __init__(self, per_key: int, total: int) -> None:
+        self.per_key, self.total = per_key, total
+        self.day = ""
+        self.used: dict[str, int] = defaultdict(int)
+        self.used_total = 0
+        self.lock = Lock()
+
+    def take(self, key: str, now: float | None = None) -> str | None:
+        """Count one AI answer for `key`; None if allowed, otherwise the reason."""
+        now = time.time() if now is None else now
+        with self.lock:
+            today = time.strftime("%Y-%m-%d", time.gmtime(now))
+            if today != self.day:  # a new day: everyone starts again (and old keys are dropped)
+                self.day, self.used, self.used_total = today, defaultdict(int), 0
+            if self.used_total >= self.total:
+                return "daily_ai_cap"
+            if self.used[key] >= self.per_key:
+                return "visitor_ai_quota"
+            self.used[key] += 1
+            self.used_total += 1
+            return None

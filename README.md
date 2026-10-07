@@ -5,23 +5,29 @@ An AI assistant that answers recruiters' questions about my experience. It is gr
 **Live:** https://mohamadnajjari.github.io/ask-my-cv/
 
 ```
- Recruiter's browser                      Backend (FastAPI, Docker)                 Anthropic
-┌──────────────────────┐  POST /api/chat  ┌───────────────────────────────┐        ┌─────────────┐
-│ docs/index.html      │ ───────────────▶ │ validation · CORS · rate limit │        │             │
-│ static, GitHub Pages │                  │ Claude tool-use loop ─────────┼──────▶ │ Claude API  │
-│ no secrets           │ ◀─────────────── │   └ search_profile (BM25 RAG) │ ◀───── │             │
-└──────────────────────┘ answer + sources │   └ get_contact_options       │        └─────────────┘
-                                          │ knowledge/*.md                │
-                                          └───────────────────────────────┘
+ Recruiter's browser                      Backend (FastAPI, Docker)                   Anthropic
+┌──────────────────────┐  POST /api/chat  ┌─────────────────────────────────┐        ┌────────────┐
+│ docs/index.html      │ ───────────────▶ │ validation · CORS · flood limit │        │            │
+│ static, GitHub Pages │                  │ 1 prepared answer   (0 tokens)  │        │            │
+│ no secrets           │                  │ 2 answer cache      (0 tokens)  │        │            │
+│                      │                  │ 3 budget + AI quota ─ or ─ 1    │        │            │
+│                      │ ◀─────────────── │ 4 BM25 passages + one call ─────┼──────▶ │ Claude API │
+└──────────────────────┘ answer + kind    │ knowledge/*.md, answers.json    │ ◀───── │            │
+                                          └─────────────────────────────────┘        └────────────┘
 ```
 
 ## How it works
 
-- **Retrieval-augmented generation.** `knowledge/*.md` is split into sections by heading and ranked with Okapi BM25 (`backend/app/retrieval.py`), with simple German→English synonyms so German questions find English source text. No vector database is needed at this size, and the `Retriever.search()` interface is the place to plug in embeddings later.
-- **Tool use (function calling).** Claude decides when to call `search_profile` and can search several times with different queries. `get_contact_options` returns contact details. The loop is capped at 3 tool rounds.
-- **Grounding and guardrails.** The system prompt requires answers to be based on retrieved text, says to admit when something is unknown, answers in the visitor's language (EN/DE/FA), and resists prompt injection and off-topic requests. Sources are returned with every answer.
-- **Security and cost control.** The API key exists only on the server. Requests are validated (length, roles, history size, total conversation size), CORS only allows the GitHub Pages origin, each visitor (Cloudflare's `CF-Connecting-IP`, which visitors can't fake) gets a sliding-window rate limit, and there is a global daily cap. A **money budget** converts every answer's real token usage into micro-dollars and stops answering when the day's or month's budget is used (totals survive restarts); one log line per answer records tokens and cost, never the question. Dependencies are pinned with hashes; the image is built in CI and pulled by digest. Error details are never sent to the browser.
-- **Quality.** `pytest` covers retrieval, the tool loop, rate limits and CORS with a fake Claude client. `evals/run_evals.py` checks real answers against known facts and red-team questions.
+Every question goes to the cheapest source that can answer it:
+
+1. **Prepared answers (0 tokens).** `knowledge/answers.json` holds ~20 answers to the questions recruiters ask most (work permit, availability, location, strengths, contact…), written in English, German and Persian from the same facts as the knowledge files. A question gets one only when a keyword phrase covers most of it (`backend/app/prepared.py`); a question that is mostly about something else still goes to the model. The page's suggestion buttons ask for them by ID.
+2. **Shared answer cache (0 tokens).** A question asked before, with the same content words in the same language, gets the stored answer (`backend/app/cache.py`; 30 days, 500 entries). Follow-ups and answers that were cut off are never cached.
+3. **Limits that cost nothing.** Before any model call: the money budget (real token usage converted to micro-dollars, per day and month, kept across restarts), an AI quota per visitor per day and a total per day. When any is reached, the visitor gets the closest prepared answer instead of an error, so overuse costs nothing. A flood limit (all kinds of answers) answers 429; Cloudflare's edge rule stops floods before the server.
+4. **One lean model call.** The server itself retrieves the three best passages with Okapi BM25 (`backend/app/retrieval.py`; German and Persian questions also search with the English words of their closest prepared topic) and sends them with a short prompt, the last two turns of the conversation and a 350-token answer cap: one call, no tool loop. A typical answer costs about $0.001–0.002 with Claude Haiku 4.5.
+
+- **Grounding and guardrails.** The prompt allows only the given facts, says to admit when something is unknown, answers in the visitor's language (EN/DE/FA), and resists prompt injection and off-topic requests. Sources are returned with every AI answer.
+- **Security.** The API key exists only on the server. Requests are validated (length, roles, history size, total conversation size, answer IDs), CORS only allows the GitHub Pages origin, and visitors are counted by Cloudflare's `CF-Connecting-IP`, which they can't fake. One log line per AI answer records tokens and cost, never the question or the address. Dependencies are pinned with hashes; the image is built in CI and pulled by digest. Error details are never sent to the browser.
+- **Quality.** `pytest` covers retrieval, prepared answers in three languages, the cache, every limit and CORS with a fake Claude client. `evals/run_evals.py` checks real answers against known facts and red-team questions.
 
 ## Run locally
 
@@ -59,4 +65,4 @@ Alternative: run the Docker image on the server that already hosts Onsorex, behi
 
 ## Updating the content
 
-Edit the Markdown in `knowledge/`. Lines starting with `> TODO` or `<!--` are private notes and are never sent to the model. `_summary.md` is always included in the prompt, and `_contact.md` is what the contact tool returns.
+Edit the Markdown in `knowledge/`. Lines starting with `> TODO` or `<!--` are private notes and are never sent to the model. `_summary.md` and `_contact.md` are always included in the prompt. After changing a fact, update `knowledge/answers.json` too (the same fact in all three languages).

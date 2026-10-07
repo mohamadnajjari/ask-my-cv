@@ -1,0 +1,597 @@
+[
+ {
+  "id": "about",
+  "q": {
+   "en": [
+    "introduce",
+    "one minute",
+    "summary",
+    "background",
+    "profile",
+    "elevator pitch",
+    "tell me about mohammad"
+   ],
+   "de": [
+    "vorstellen",
+    "kurz vorstellen",
+    "zusammenfassung",
+    "profil",
+    "erzähl über mohammad"
+   ],
+   "fa": [
+    "معرفی",
+    "خلاصه",
+    "سوابق",
+    "درباره محمد"
+   ]
+  },
+  "a": {
+   "en": "Mohammad Najjari is an AI engineer in Frankfurt am Main and calls himself a solution finder. He holds an M.Eng. in Artificial Intelligence from Deggendorf Institute of Technology. At BHS Intralogistics he raised an industrial computer-vision model's F1-score from 0.41 to 0.85 and helped move it toward production. Today he builds Onsorex, a multilingual market-explanation platform with a guarded LLM layer.",
+   "de": "Mohammad Najjari ist KI-Ingenieur in Frankfurt am Main und versteht sich als Lösungsfinder. Er hat einen M.Eng. in Künstlicher Intelligenz der Technischen Hochschule Deggendorf. Bei BHS Intralogistics steigerte er den F1-Score eines industriellen Computer-Vision-Modells von 0,41 auf 0,85 und brachte es in Richtung Produktion. Heute entwickelt er Onsorex, eine mehrsprachige Plattform, die Märkte verständlich erklärt.",
+   "fa": "محمد نجاری مهندس هوش مصنوعی در فرانکفورت است و خودش را یک حل‌کننده مسئله می‌داند. او کارشناسی ارشد هوش مصنوعی را از دانشگاه فنی دگندورف گرفته است. در BHS Intralogistics امتیاز F1 یک مدل بینایی ماشین صنعتی را از ۰٫۴۱ به ۰٫۸۵ رساند. اکنون Onsorex را می‌سازد؛ پلتفرمی چندزبانه که بازارها را به زبان ساده توضیح می‌دهد."
+  }
+ },
+ {
+  "id": "work-permit",
+  "q": {
+   "en": [
+    "work permit",
+    "visa",
+    "allowed to work in germany",
+    "residence permit",
+    "sponsorship",
+    "work authorization"
+   ],
+   "de": [
+    "arbeitserlaubnis",
+    "visum",
+    "aufenthaltstitel",
+    "darf arbeiten",
+    "aufenthaltserlaubnis"
+   ],
+   "fa": [
+    "اجازه کار",
+    "ویزا",
+    "اقامت"
+   ]
+  },
+  "a": {
+   "en": "Yes, he is allowed to work full time in Germany.",
+   "de": "Ja, er darf in Deutschland in Vollzeit arbeiten.",
+   "fa": "بله، او اجازه کار تمام‌وقت در آلمان را دارد."
+  }
+ },
+ {
+  "id": "availability",
+  "q": {
+   "en": [
+    "start",
+    "availability",
+    "available",
+    "notice period",
+    "start date"
+   ],
+   "de": [
+    "anfangen",
+    "verfügbar",
+    "verfügbarkeit",
+    "starttermin",
+    "kündigungsfrist",
+    "beginnen"
+   ],
+   "fa": [
+    "شروع",
+    "زمان شروع",
+    "آماده"
+   ]
+  },
+  "a": {
+   "en": "He can start as soon as possible.",
+   "de": "Er kann so bald wie möglich anfangen.",
+   "fa": "او می‌تواند در اولین فرصت شروع به کار کند."
+  }
+ },
+ {
+  "id": "location",
+  "q": {
+   "en": [
+    "location",
+    "remote",
+    "relocate",
+    "hybrid",
+    "onsite",
+    "travel",
+    "frankfurt"
+   ],
+   "de": [
+    "standort",
+    "homeoffice",
+    "remote",
+    "umzug",
+    "hybrid",
+    "vor ort",
+    "reisen",
+    "wohnort"
+   ],
+   "fa": [
+    "محل",
+    "دورکاری",
+    "ریموت",
+    "سفر",
+    "کجا"
+   ]
+  },
+  "a": {
+   "en": "He works on site in Frankfurt am Main, hybrid for workplaces within about 100 km of Frankfurt, or remote anywhere in Germany. He is open to travel, for example to customer sites or plants. Full-time positions only.",
+   "de": "Er arbeitet vor Ort in Frankfurt am Main, hybrid bei Arbeitsorten im Umkreis von etwa 100 km um Frankfurt oder remote überall in Deutschland. Er ist reisebereit, etwa zu Kunden oder Werken. Nur Vollzeitstellen.",
+   "fa": "او به صورت حضوری در فرانکفورت، ترکیبی برای محل‌های کار تا حدود ۱۰۰ کیلومتری فرانکفورت، یا دورکاری در هر جای آلمان کار می‌کند. برای سفرهای کاری، مثلاً به کارخانه‌ها یا مشتریان، آماده است. فقط موقعیت‌های تمام‌وقت."
+  }
+ },
+ {
+  "id": "roles",
+  "q": {
+   "en": [
+    "roles",
+    "position",
+    "looking for a job",
+    "job",
+    "kind of role",
+    "industries"
+   ],
+   "de": [
+    "stelle",
+    "position",
+    "sucht",
+    "rolle",
+    "branche",
+    "job"
+   ],
+   "fa": [
+    "نقش",
+    "موقعیت",
+    "دنبال",
+    "شغل",
+    "صنعت"
+   ]
+  },
+  "a": {
+   "en": "In order of preference: AI Engineer, AI Integration Engineer and Computer Vision Engineer; he is also open to Data Engineer, Data Analyst and Data Scientist roles. Finance and technology interest him most. He wants a role where he keeps learning and building new things.",
+   "de": "In dieser Reihenfolge: AI Engineer, AI Integration Engineer und Computer Vision Engineer; offen ist er auch für Data Engineer, Data Analyst und Data Scientist. Am meisten interessieren ihn Finanzen und Technologie. Er sucht eine Rolle, in der er weiter lernt und Neues baut.",
+   "fa": "به ترتیب اولویت: مهندس هوش مصنوعی، مهندس یکپارچه‌سازی هوش مصنوعی و مهندس بینایی ماشین؛ همچنین برای نقش‌های مهندس داده، تحلیلگر داده و دانشمند داده آماده است. بیشترین علاقه او به صنعت مالی و فناوری است و نقشی می‌خواهد که در آن همیشه چیز تازه‌ای بیاموزد و بسازد."
+  }
+ },
+ {
+  "id": "why-ai",
+  "q": {
+   "en": [
+    "why ai",
+    "ai engineering",
+    "ai integration",
+    "why this field",
+    "motivation"
+   ],
+   "de": [
+    "warum ki",
+    "warum ai",
+    "motivation",
+    "ki integration"
+   ],
+   "fa": [
+    "چرا هوش مصنوعی",
+    "انگیزه"
+   ]
+  },
+  "a": {
+   "en": "He sees AI integration as the key skill of the coming years and enjoys the work. At BHS he learned that a good model is only half the job: the value came from making it robust to real images, fitting it into hardware and latency limits and integrating it into existing workflows. Onsorex continues that on the software side.",
+   "de": "Er sieht KI-Integration als Schlüsselkompetenz der kommenden Jahre und macht die Arbeit gern. Bei BHS lernte er, dass ein gutes Modell nur die halbe Arbeit ist: Der Nutzen entstand durch Robustheit bei echten Bildern, das Einhalten von Hardware- und Latenzgrenzen und die Integration in bestehende Abläufe. Onsorex setzt das auf der Softwareseite fort.",
+   "fa": "او یکپارچه‌سازی هوش مصنوعی را مهارت کلیدی سال‌های آینده می‌داند و از این کار لذت می‌برد. در BHS آموخت که یک مدل خوب فقط نیمی از کار است: ارزش واقعی در مقاوم کردن آن برای تصاویر واقعی، رعایت محدودیت‌های سخت‌افزار و زمان پاسخ و ادغام آن در فرایندهای موجود بود. Onsorex همین مسیر را در نرم‌افزار ادامه می‌دهد."
+  }
+ },
+ {
+  "id": "why-hire",
+  "q": {
+   "en": [
+    "why hire",
+    "why should we hire",
+    "more experience",
+    "stand out",
+    "why choose him"
+   ],
+   "de": [
+    "warum einstellen",
+    "warum sollten wir",
+    "mehr erfahrung",
+    "warum ihn wählen"
+   ],
+   "fa": [
+    "چرا استخدام",
+    "چرا او را استخدام"
+   ]
+  },
+  "a": {
+   "en": "He is dedicated and does not give up until he finds a solution. Evidence: he raised his thesis model's F1-score from 0.41 to 0.85, built a complete marketplace from scratch before AI coding assistants existed, and built Onsorex end to end with more than 1,400 automated tests.",
+   "de": "Er ist engagiert und gibt nicht auf, bis er eine Lösung findet. Belege: Er steigerte den F1-Score seines Abschlussarbeitsmodells von 0,41 auf 0,85, baute einen kompletten Online-Marktplatz von Grund auf, bevor es KI-Programmierassistenten gab, und entwickelte Onsorex allein mit über 1.400 automatisierten Tests.",
+   "fa": "او پرتلاش است و تا راه‌حل را پیدا نکند دست برنمی‌دارد. شواهد: امتیاز F1 مدل پایان‌نامه‌اش را از ۰٫۴۱ به ۰٫۸۵ رساند، پیش از وجود دستیارهای برنامه‌نویسی هوش مصنوعی یک بازار آنلاین کامل را از صفر ساخت، و Onsorex را به تنهایی با بیش از ۱۴۰۰ آزمون خودکار ساخته است."
+  }
+ },
+ {
+  "id": "strengths",
+  "q": {
+   "en": [
+    "strengths",
+    "strength",
+    "best qualities"
+   ],
+   "de": [
+    "stärken",
+    "stärke",
+    "gut kann"
+   ],
+   "fa": [
+    "نقاط قوت",
+    "قوت"
+   ]
+  },
+  "a": {
+   "en": "He names patience, courage and persistence. Persistence: the systematic error analysis that more than doubled his thesis model's F1-score. Courage: founding his own marketplace and later moving to Germany to study AI. Patience: careful, test-driven engineering, as in Onsorex's automated test suites.",
+   "de": "Er nennt Geduld, Mut und Ausdauer. Ausdauer: die systematische Fehleranalyse, die den F1-Score seines Abschlussarbeitsmodells mehr als verdoppelte. Mut: die Gründung seines eigenen Marktplatzes und später der Umzug nach Deutschland für das KI-Studium. Geduld: sorgfältige, testgetriebene Entwicklung wie bei Onsorex.",
+   "fa": "او صبر، شجاعت و پشتکار را نام می‌برد. پشتکار: تحلیل خطای نظام‌مندی که امتیاز F1 مدل پایان‌نامه‌اش را بیش از دو برابر کرد. شجاعت: راه‌اندازی بازار آنلاین خودش و بعدها مهاجرت به آلمان برای تحصیل هوش مصنوعی. صبر: مهندسی دقیق و مبتنی بر آزمون، مانند Onsorex."
+  }
+ },
+ {
+  "id": "weakness",
+  "q": {
+   "en": [
+    "weakness",
+    "weaknesses",
+    "needs to improve"
+   ],
+   "de": [
+    "schwäche",
+    "schwächen"
+   ],
+   "fa": [
+    "نقطه ضعف",
+    "ضعف"
+   ]
+  },
+  "a": {
+   "en": "He can get so absorbed in a problem that he forgets to eat lunch. It never affects his deadlines; he always meets them.",
+   "de": "Er kann so in ein Problem vertieft sein, dass er das Mittagessen vergisst. Seine Termine hält er trotzdem immer ein.",
+   "fa": "گاهی آن‌قدر غرق یک مسئله می‌شود که ناهار را فراموش می‌کند؛ اما این هرگز روی مهلت‌هایش اثر نمی‌گذارد و همیشه کارها را به موقع تحویل می‌دهد."
+  }
+ },
+ {
+  "id": "failure",
+  "q": {
+   "en": [
+    "failed",
+    "failure",
+    "mistake",
+    "challenge",
+    "difficult problem",
+    "hardest"
+   ],
+   "de": [
+    "fehlschlag",
+    "gescheitert",
+    "fehler",
+    "herausforderung",
+    "schwierigstes"
+   ],
+   "fa": [
+    "شکست",
+    "چالش",
+    "سخت ترین"
+   ]
+  },
+  "a": {
+   "en": "His first damage-depth model at BHS reached only an F1-score of 0.41 with a 50% Top-1 error. He analysed the misclassifications, changed the image cropping to focus on the damage, improved preprocessing for changing light and image quality and improved the data, reaching F1 0.85 and 23% error.",
+   "de": "Sein erstes Modell zur Schadenstiefe bei BHS erreichte nur einen F1-Score von 0,41 bei 50 % Top-1-Fehler. Er analysierte die Fehlklassifikationen, richtete den Bildausschnitt auf den Schaden aus, verbesserte die Vorverarbeitung für wechselndes Licht und Bildqualität sowie die Daten und erreichte F1 0,85 bei 23 % Fehler.",
+   "fa": "اولین مدل تخمین عمق آسیب او در BHS فقط به امتیاز F1 برابر ۰٫۴۱ و خطای ۵۰٪ رسید. او طبقه‌بندی‌های اشتباه را تحلیل کرد، برش تصویر را روی محل آسیب متمرکز کرد، پیش‌پردازش را برای نور و کیفیت متغیر بهتر کرد و داده‌ها را بهبود داد؛ نتیجه F1 برابر ۰٫۸۵ و خطای ۲۳٪ بود."
+  }
+ },
+ {
+  "id": "learning",
+  "q": {
+   "en": [
+    "learn new",
+    "new technologies",
+    "learn new technologies"
+   ],
+   "de": [
+    "lernt",
+    "neue technologien",
+    "einarbeiten"
+   ],
+   "fa": [
+    "یادگیری",
+    "یاد گرفتن"
+   ]
+  },
+  "a": {
+   "en": "First he learns how a technology is used, then he builds a small project with it. Recent examples: a modern data-engineering stack through independent projects in 2026, and this “Ask my CV” assistant with Claude, retrieval and tool use.",
+   "de": "Zuerst lernt er, wie eine Technologie eingesetzt wird, dann baut er ein kleines Projekt damit. Aktuelle Beispiele: ein moderner Data-Engineering-Stack in eigenen Projekten 2026 und dieser „Ask my CV“-Assistent mit Claude, Retrieval und Tool Use.",
+   "fa": "اول یاد می‌گیرد یک فناوری چگونه به کار می‌رود و سپس با آن یک پروژه کوچک می‌سازد. نمونه‌های اخیر: یک مجموعه مدرن مهندسی داده در پروژه‌های مستقل سال ۲۰۲۶ و همین دستیار «Ask my CV» با Claude، بازیابی اطلاعات و فراخوانی ابزار."
+  }
+ },
+ {
+  "id": "working-style",
+  "q": {
+   "en": [
+    "working style",
+    "team",
+    "independently",
+    "teamwork",
+    "team player"
+   ],
+   "de": [
+    "arbeitsweise",
+    "team",
+    "selbstständig",
+    "teamarbeit"
+   ],
+   "fa": [
+    "سبک کار",
+    "کار تیمی",
+    "مستقل"
+   ]
+  },
+  "a": {
+   "en": "Flexible: he works well independently (he built Onsorex and Irantimche.com alone) and in teams (BHS), and adapts to how the team works.",
+   "de": "Flexibel: Er arbeitet gut selbstständig (Onsorex und Irantimche.com hat er allein gebaut) und im Team (BHS) und passt sich der Arbeitsweise des Teams an.",
+   "fa": "انعطاف‌پذیر است: هم به صورت مستقل خوب کار می‌کند (Onsorex و Irantimche.com را به تنهایی ساخته) و هم در تیم (BHS)، و خودش را با روش کار تیم هماهنگ می‌کند."
+  }
+ },
+ {
+  "id": "future",
+  "q": {
+   "en": [
+    "5 years",
+    "five years",
+    "long term",
+    "career goals",
+    "future plans",
+    "germany long"
+   ],
+   "de": [
+    "5 jahren",
+    "fünf jahren",
+    "langfristig",
+    "karriereziel",
+    "zukunft"
+   ],
+   "fa": [
+    "۵ سال",
+    "پنج سال",
+    "آینده",
+    "بلندمدت"
+   ]
+  },
+  "a": {
+   "en": "In 3–5 years he sees himself as a senior AI engineer. He studied in Germany, learned the language and culture, and is building his career and life here for the long term.",
+   "de": "In 3–5 Jahren sieht er sich als Senior AI Engineer. Er hat in Deutschland studiert, Sprache und Kultur gelernt und baut Karriere und Leben hier langfristig auf.",
+   "fa": "او خودش را در ۳ تا ۵ سال آینده یک مهندس ارشد هوش مصنوعی می‌بیند. در آلمان تحصیل کرده، زبان و فرهنگ آن را آموخته و آینده شغلی و زندگی‌اش را برای بلندمدت اینجا می‌سازد."
+  }
+ },
+ {
+  "id": "references",
+  "q": {
+   "en": [
+    "references",
+    "reference letter",
+    "recommendation"
+   ],
+   "de": [
+    "referenzen",
+    "arbeitszeugnis",
+    "empfehlung"
+   ],
+   "fa": [
+    "معرفی نامه",
+    "توصیه نامه"
+   ]
+  },
+  "a": {
+   "en": "A recommendation letter and an employment reference (Arbeitszeugnis) from BHS Intralogistics are available on request.",
+   "de": "Ein Empfehlungsschreiben und ein Arbeitszeugnis von BHS Intralogistics sind auf Anfrage verfügbar.",
+   "fa": "توصیه‌نامه و گواهی سابقه کار (Arbeitszeugnis) از BHS Intralogistics در صورت درخواست ارائه می‌شود."
+  }
+ },
+ {
+  "id": "contact",
+  "q": {
+   "en": [
+    "contact",
+    "email",
+    "linkedin",
+    "reach him",
+    "interview",
+    "phone"
+   ],
+   "de": [
+    "kontakt",
+    "e-mail",
+    "erreichen",
+    "vorstellungsgespräch"
+   ],
+   "fa": [
+    "تماس",
+    "ایمیل",
+    "مصاحبه"
+   ]
+  },
+  "a": {
+   "en": "Email: mohamad.najjari.a.e@gmail.com · LinkedIn: https://www.linkedin.com/in/mnajjari · GitHub: https://github.com/mohamadnajjari. He is happy to receive interview requests by email or LinkedIn.",
+   "de": "E-Mail: mohamad.najjari.a.e@gmail.com · LinkedIn: https://www.linkedin.com/in/mnajjari · GitHub: https://github.com/mohamadnajjari. Er freut sich über Einladungen zu Vorstellungsgesprächen per E-Mail oder LinkedIn.",
+   "fa": "ایمیل: mohamad.najjari.a.e@gmail.com · لینکدین: https://www.linkedin.com/in/mnajjari · گیت‌هاب: https://github.com/mohamadnajjari. او از دعوت به مصاحبه از طریق ایمیل یا لینکدین استقبال می‌کند."
+  }
+ },
+ {
+  "id": "languages",
+  "q": {
+   "en": [
+    "languages",
+    "speak german",
+    "german level",
+    "english level",
+    "language skills"
+   ],
+   "de": [
+    "sprachen",
+    "deutsch",
+    "englisch",
+    "sprachkenntnisse",
+    "spricht"
+   ],
+   "fa": [
+    "زبان",
+    "آلمانی",
+    "انگلیسی"
+   ]
+  },
+  "a": {
+   "en": "Persian native, English C1 and German B1 (improving). He also holds a German driving licence (class B).",
+   "de": "Persisch (Muttersprache), Englisch C1 und Deutsch B1 (wird laufend besser). Außerdem hat er einen deutschen Führerschein Klasse B.",
+   "fa": "فارسی (زبان مادری)، انگلیسی در سطح C1 و آلمانی در سطح B1 (در حال پیشرفت). همچنین گواهینامه رانندگی آلمانی کلاس B دارد."
+  }
+ },
+ {
+  "id": "education",
+  "q": {
+   "en": [
+    "education",
+    "degree",
+    "master",
+    "university",
+    "studied",
+    "grade"
+   ],
+   "de": [
+    "ausbildung",
+    "studium",
+    "abschluss",
+    "master",
+    "hochschule",
+    "note"
+   ],
+   "fa": [
+    "تحصیلات",
+    "مدرک",
+    "دانشگاه",
+    "ارشد"
+   ]
+  },
+  "a": {
+   "en": "M.Eng. in Artificial Intelligence for Smart Sensors and Actuators, Deggendorf Institute of Technology (03/2023–03/2026, grade 2.1). Before that a B.Eng. in Manufacturing and Production Technology (GPA equivalent 1.3) and an associate degree in aircraft repair and maintenance.",
+   "de": "M.Eng. Artificial Intelligence for Smart Sensors and Actuators, Technische Hochschule Deggendorf (03/2023–03/2026, Note 2,1). Davor ein B.Eng. in Fertigungs- und Produktionstechnik (Note umgerechnet 1,3) und ein Abschluss in Flugzeugwartung.",
+   "fa": "کارشناسی ارشد هوش مصنوعی برای حسگرها و عملگرهای هوشمند از دانشگاه فنی دگندورف (۲۰۲۳ تا ۲۰۲۶، نمره ۲٫۱). پیش از آن کارشناسی مهندسی تکنولوژی ساخت و تولید (معادل نمره ۱٫۳) و کاردانی تعمیر و نگهداری هواپیما."
+  }
+ },
+ {
+  "id": "onsorex",
+  "q": {
+   "en": [
+    "onsorex",
+    "current project",
+    "side project",
+    "his own project"
+   ],
+   "de": [
+    "onsorex",
+    "aktuelles projekt"
+   ],
+   "fa": [
+    "onsorex",
+    "پروژه",
+    "عنصرکس"
+   ]
+  },
+  "a": {
+   "en": "Onsorex (onsorex.com) is a live multilingual web app he designed and built alone: market prices in your own currency and language with plain-language explanations (Next.js, FastAPI, PostgreSQL/TimescaleDB, Docker on Hetzner). Its LLM layer is built and tested with guardrails but not yet switched on in production.",
+   "de": "Onsorex (onsorex.com) ist eine live laufende, mehrsprachige Web-App, die er allein entworfen und gebaut hat: Marktpreise in eigener Währung und Sprache mit verständlichen Erklärungen (Next.js, FastAPI, PostgreSQL/TimescaleDB, Docker bei Hetzner). Die LLM-Schicht ist mit Guardrails gebaut und getestet, aber in Produktion noch nicht aktiv.",
+   "fa": "Onsorex (onsorex.com) یک وب‌اپلیکیشن چندزبانه فعال است که او به تنهایی طراحی کرده و ساخته است: قیمت بازارها به ارز و زبان خود کاربر همراه با توضیح ساده (Next.js، FastAPI، PostgreSQL/TimescaleDB، Docker روی Hetzner). لایه هوش مصنوعی آن ساخته و آزمایش شده ولی هنوز در نسخه اصلی فعال نیست."
+  }
+ },
+ {
+  "id": "thesis",
+  "q": {
+   "en": [
+    "thesis",
+    "bhs",
+    "computer vision project",
+    "damage depth",
+    "f1"
+   ],
+   "de": [
+    "masterarbeit",
+    "abschlussarbeit",
+    "bhs",
+    "bildverarbeitung"
+   ],
+   "fa": [
+    "پایان نامه",
+    "بینایی ماشین",
+    "bhs"
+   ]
+  },
+  "a": {
+   "en": "At BHS Intralogistics he built a ResNet-50 model that estimates damage depth from industrial 2D images, using 5,886 annotated images. He improved the F1-score from 0.41 to 0.85 and cut the Top-1 error from 50% to 23%, then helped move it toward production.",
+   "de": "Bei BHS Intralogistics entwickelte er ein ResNet-50-Modell, das die Schadenstiefe aus industriellen 2D-Bildern schätzt, mit 5.886 annotierten Bildern. Er steigerte den F1-Score von 0,41 auf 0,85, senkte den Top-1-Fehler von 50 % auf 23 % und brachte das Modell Richtung Produktion.",
+   "fa": "او در BHS Intralogistics یک مدل ResNet-50 ساخت که عمق آسیب را از تصاویر دوبعدی صنعتی تخمین می‌زند و با ۵۸۸۶ تصویر برچسب‌خورده آموزش دید. امتیاز F1 را از ۰٫۴۱ به ۰٫۸۵ رساند، خطا را از ۵۰٪ به ۲۳٪ کاهش داد و به انتقال آن به تولید کمک کرد."
+  }
+ },
+ {
+  "id": "skills",
+  "q": {
+   "en": [
+    "skills",
+    "tech stack",
+    "technologies",
+    "tools",
+    "python"
+   ],
+   "de": [
+    "fähigkeiten",
+    "kenntnisse",
+    "technologien",
+    "tools"
+   ],
+   "fa": [
+    "مهارت",
+    "فناوری",
+    "ابزار"
+   ]
+  },
+  "a": {
+   "en": "AI and LLM integration (Claude, Mistral, RAG, tool use, guardrails), computer vision (TensorFlow/Keras, OpenCV, ResNet-50), and deployment (Docker, FastAPI, PostgreSQL, GitHub Actions, Linux servers). Languages: Python, SQL, TypeScript, PHP, JavaScript.",
+   "de": "KI- und LLM-Integration (Claude, Mistral, RAG, Tool Use, Guardrails), Computer Vision (TensorFlow/Keras, OpenCV, ResNet-50) und Deployment (Docker, FastAPI, PostgreSQL, GitHub Actions, Linux-Server). Programmiersprachen: Python, SQL, TypeScript, PHP, JavaScript.",
+   "fa": "یکپارچه‌سازی هوش مصنوعی و مدل‌های زبانی (Claude، Mistral، RAG، فراخوانی ابزار، کنترل خروجی)، بینایی ماشین (TensorFlow/Keras، OpenCV، ResNet-50) و استقرار (Docker، FastAPI، PostgreSQL، GitHub Actions، سرورهای لینوکس). زبان‌ها: Python، SQL، TypeScript، PHP، JavaScript."
+  }
+ },
+ {
+  "id": "salary",
+  "q": {
+   "en": [
+    "salary",
+    "pay",
+    "compensation",
+    "expected salary"
+   ],
+   "de": [
+    "gehalt",
+    "gehaltsvorstellung",
+    "vergütung"
+   ],
+   "fa": [
+    "حقوق",
+    "دستمزد"
+   ]
+  },
+  "a": {
+   "en": "Salary is best discussed with Mohammad directly. You can reach him at mohamad.najjari.a.e@gmail.com or on LinkedIn.",
+   "de": "Das Gehalt bespricht man am besten direkt mit Mohammad: mohamad.najjari.a.e@gmail.com oder über LinkedIn.",
+   "fa": "درباره حقوق بهتر است مستقیم با محمد صحبت کنید: mohamad.najjari.a.e@gmail.com یا لینکدین."
+  }
+ }
+]

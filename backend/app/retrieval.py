@@ -13,7 +13,11 @@ from collections import Counter
 from dataclasses import dataclass
 from pathlib import Path
 
-_TOKEN = re.compile(r"[a-zA-Z0-9äöüßÄÖÜ+#.\-]+")
+# Latin with German letters, and Persian letters (U+0600-U+06FF) for Persian questions.
+_TOKEN = re.compile(r"[a-zA-Z0-9äöüßÄÖÜ\u0600-\u06ff+#.\-]+")
+# Persian typed on different keyboards: Arabic yeh/kaf become the Persian forms; the zero-width
+# non-joiner is dropped, so "می\u200cکند" and "میکند" are the same word.
+_PERSIAN = str.maketrans({"\u064a": "\u06cc", "\u0643": "\u06a9", "\u0629": "\u0647", "\u200c": None})
 _STOP = {
     # English
     "the", "a", "an", "and", "or", "of", "to", "in", "on", "for", "with", "is", "are", "was",
@@ -22,6 +26,10 @@ _STOP = {
     # German
     "der", "die", "das", "und", "oder", "ein", "eine", "ist", "sind", "war", "mit", "von", "zu",
     "im", "in", "auf", "für", "er", "sein", "seine", "was", "wie", "hat", "über", "den", "dem",
+    "hat", "kann", "welche", "welcher", "wann", "wo", "ihn", "ihm", "es", "sie",
+    # Persian (normalised: no zero-width non-joiner)
+    "او", "از", "در", "به", "را", "که", "و", "با", "این", "آن", "است", "چه", "چی", "آیا",
+    "برای", "ها", "های", "می", "میکند", "دارد", "چگونه", "چطور", "کدام", "هست", "ایشان", "یک",
 }
 # A few bilingual synonyms so German questions find English source text.
 _SYNONYMS = {
@@ -36,7 +44,7 @@ _SYNONYMS = {
 
 def tokenize(text: str) -> list[str]:
     out: list[str] = []
-    for tok in _TOKEN.findall(text.lower()):
+    for tok in _TOKEN.findall(text.lower().translate(_PERSIAN)):
         tok = tok.strip(".-")
         if not tok or tok in _STOP:
             continue

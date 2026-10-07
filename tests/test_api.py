@@ -279,3 +279,36 @@ def test_a_cv_change_empties_the_answer_cache(tmp_path):
     updated = TestClient(build_app(Settings(knowledge_dir=kb, llm_mode="test", data_dir=data), client=fake))
     assert kinds(updated, "Which Docker Compose setups did he build?") == ["ai"]  # not the old answer
     assert len(fake.calls) == 1
+
+
+def test_answers_with_private_details_never_reach_the_visitor():
+    class Leaky(FakeClaude):
+        def __init__(self, text):
+            super().__init__()
+            self.text = text
+
+        def create(self, **kw):
+            resp = super().create(**kw)
+            resp.content = [NS(type="text", text=self.text)]
+            return resp
+
+    for leak in ("Call him at +49 151 23456789.", "His number is 0151 2345678.",
+                 "Write to someone.else@example.com."):
+        client, _ = make(fake=Leaky(leak))
+        body = ask(client, "What is his private Kubernetes number?").json()
+        assert body["kind"] == "prepared" and "linkedin" in body["answer"].lower(), leak
+    # Dates, scores and his listed address are fine.
+    client, _ = make(fake=Leaky("03/2023 - 03/2026, F1 0.41 -> 0.85, 5,886 images; mohamad.najjari.a.e@gmail.com"))
+    assert ask(client, "Kubernetes?").json()["kind"] == "ai"
+
+
+def test_the_prompt_forbids_personal_details():
+    client, fake = make()
+    ask(client, "Kubernetes?")
+    assert "Never give personal details" in fake.calls[0]["system"]
+
+
+def test_the_knowledge_holds_no_private_documents():
+    text = " ".join(f.read_text(encoding="utf-8").lower() for f in KB.iterdir() if f.is_file())
+    for word in ("police", "clearance", "job-seeker", "job seekers", "passport", "date of birth", "+49"):
+        assert word not in text, word

@@ -160,6 +160,9 @@ def build_app(settings: Settings | None = None, client=None) -> FastAPI:
         # One line per answer for monitoring (`docker logs ask-my-cv | grep usage`):
         # tokens, cost and totals only; never the question, the answer or the address.
         log.info(json.dumps({"event": "usage", **usage, **totals}))
+        if result["private"]:  # never shown, never cached; the question and answer aren't logged
+            log.info(json.dumps({"event": "blocked_private_details"}))
+            return ChatResponse(answer=prepared.by_id("contact", lang) or "", sources=[], kind="prepared")
         if len(body.messages) == 1 and result["complete"]:
             cache.put(question, lang, result["answer"], result["sources"])
         return ChatResponse(answer=result["answer"], sources=result["sources"], kind="ai")

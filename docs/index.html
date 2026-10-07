@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pre-interview – Mohammad Najjari</title>
+<meta name="description" content="Ask an AI assistant about Mohammad Najjari's experience as an AI and computer-vision engineer.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..100,400..700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #17365d;        /* CV navy */
+    --steel: #53606b;      /* CV grey */
+    --paper: #f3f5f7;
+    --card: #ffffff;
+    --line: #d5dce3;
+    --signal: #e0a419;     /* calibration-target amber */
+    --text: #1f252b;
+    --bubble: #e6ecf2;
+    --err: #a3341f;
+    --sans: "Archivo", system-ui, sans-serif;
+    --serif: "Source Serif 4", Georgia, serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ink: #a9c3e4; --steel: #93a1ad; --paper: #0d1826; --card: #132235;
+      --line: #263850; --text: #e3e9ef; --bubble: #1c2f47; --err: #f08a74;
+    }
+  }
+  :root[data-theme="dark"] {
+    --ink: #a9c3e4; --steel: #93a1ad; --paper: #0d1826; --card: #132235;
+    --line: #263850; --text: #e3e9ef; --bubble: #1c2f47; --err: #f08a74;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; height: 100%; }
+  body {
+    background: var(--paper); color: var(--text);
+    font: 16px/1.5 var(--sans);
+    display: grid; grid-template-columns: minmax(260px, 340px) minmax(0, 1fr);
+    min-height: 100dvh;
+  }
+  a { color: var(--ink); text-underline-offset: 3px; }
+  :focus-visible { outline: 2px solid var(--signal); outline-offset: 2px; }
+
+  /* ---- profile rail ---- */
+  .rail {
+    padding: 40px 32px; border-right: 1px solid var(--line);
+    display: flex; flex-direction: column; gap: 28px;
+  }
+  .rail h1 {
+    margin: 0; font-stretch: 78%; font-weight: 700; font-size: 2.6rem;
+    line-height: .95; color: var(--ink); letter-spacing: -.01em;
+  }
+  .role { margin: 10px 0 0; color: var(--steel); font-size: 1rem; }
+  .facts { margin: 0; padding: 0; list-style: none; font-size: .93rem; display: grid; gap: 10px; }
+  .facts li { padding-left: 14px; position: relative; }
+  .facts li::before { content: ""; position: absolute; left: 0; top: .62em; width: 6px; height: 6px; background: var(--signal); }
+  .links { display: flex; flex-wrap: wrap; gap: 8px 16px; font-size: .93rem; }
+  .rail-foot { margin-top: auto; display: flex; gap: 8px; align-items: center; }
+  .seg { display: inline-flex; border: 1px solid var(--line); border-radius: 6px; overflow: hidden; }
+  .seg button {
+    font: 600 .8rem var(--sans); padding: 6px 10px; border: 0; background: transparent;
+    color: var(--steel); cursor: pointer;
+  }
+  .seg button[aria-pressed="true"] { background: var(--ink); color: var(--paper); }
+
+  /* ---- chat ---- */
+  main { display: flex; flex-direction: column; min-width: 0; padding: 28px clamp(16px, 4vw, 56px) 20px; }
+  .frame { position: relative; flex: 1; display: flex; flex-direction: column; min-height: 0; padding: 22px; }
+  .frame i {  /* viewfinder corners */
+    position: absolute; width: 22px; height: 22px; border-color: var(--ink); border-style: solid;
+    transition: all .5s cubic-bezier(.2,.8,.2,1);
+  }
+  .frame i:nth-child(1) { top: 0; left: 0; border-width: 2px 0 0 2px; }
+  .frame i:nth-child(2) { top: 0; right: 0; border-width: 2px 2px 0 0; }
+  .frame i:nth-child(3) { bottom: 0; left: 0; border-width: 0 0 2px 2px; }
+  .frame i:nth-child(4) { bottom: 0; right: 0; border-width: 0 2px 2px 0; }
+  body.loaded .frame i { animation: focusIn .9s cubic-bezier(.2,.8,.2,1) both; }
+  .frame.thinking i { border-color: var(--signal); animation: hunt 1.1s ease-in-out infinite alternate; }
+  @keyframes focusIn { from { transform: scale(1.6); opacity: 0; } to { transform: none; opacity: 1; } }
+  @keyframes hunt { from { width: 22px; height: 22px; } to { width: 34px; height: 34px; } }
+
+  .log { flex: 1; overflow-y: auto; display: flex; flex-direction: column; gap: 18px; padding: 4px 6px; scroll-behavior: smooth; }
+  .intro { max-width: 60ch; margin: auto 0 0; }
+  .intro h2 { font: 600 1.65rem/1.2 var(--serif); margin: 0 0 8px; color: var(--ink); }
+  .intro p { margin: 0 0 18px; color: var(--steel); }
+  .suggest { display: flex; flex-direction: column; align-items: flex-start; gap: 8px; }
+  .suggest button {
+    font: 1rem var(--sans); text-align: left; color: var(--ink); background: var(--card);
+    border: 1px solid var(--line); border-radius: 8px; padding: 9px 14px; cursor: pointer;
+  }
+  .suggest button:hover { border-color: var(--ink); }
+
+  .msg { max-width: 68ch; }
+  .msg.user {
+    align-self: flex-end; background: var(--ink); color: var(--paper);
+    padding: 10px 14px; border-radius: 12px 12px 2px 12px;
+  }
+  .msg.bot { font: 1.05rem/1.62 var(--serif); }
+  .msg.bot p { margin: 0 0 .6em; }
+  .msg.bot ul { margin: 0 0 .6em; padding-left: 1.2em; }
+  .msg.bot .src { font: .8rem var(--sans); color: var(--steel); margin-top: 6px; }
+  .msg.err { color: var(--err); font-size: .95rem; }
+
+  form { display: flex; gap: 10px; margin-top: 16px; }
+  textarea {
+    flex: 1; resize: none; font: 1rem/1.4 var(--sans); color: var(--text);
+    background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px;
+    max-height: 140px;
+  }
+  textarea:focus { outline: 2px solid var(--ink); outline-offset: -1px; }
+  form button {
+    font: 600 1rem var(--sans); background: var(--ink); color: var(--paper);
+    border: 0; border-radius: 10px; padding: 0 22px; cursor: pointer;
+  }
+  form button:disabled { opacity: .5; cursor: default; }
+  .note { font-size: .78rem; color: var(--steel); margin: 10px 2px 0; }
+
+  @media (max-width: 760px) {
+    body { grid-template-columns: 1fr; grid-template-rows: auto 1fr; }
+    .rail { border-right: 0; border-bottom: 1px solid var(--line); padding: 20px 16px; gap: 14px; }
+    .rail h1 { font-size: 2rem; }
+    .facts { display: none; }
+    .rail-foot { margin-top: 0; }
+    main { padding: 12px 16px 16px; }
+    .frame { padding: 16px 12px; }
+    .intro { margin-top: 8px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *, .frame i { animation: none !important; transition: none !important; }
+  }
+</style>
+</head>
+<body>
+<aside class="rail">
+  <div>
+    <h1>Mohammad<br>Najjari</h1>
+    <p class="role" data-i18n="role">AI Engineer · AI integration & computer vision · Frankfurt am Main</p>
+  </div>
+  <ul class="facts">
+    <li data-i18n="f1">Took an industrial computer-vision model from research prototype toward production at BHS Intralogistics</li>
+    <li data-i18n="f2">Master's thesis: ResNet-50 damage-depth model, F1-score 0.41 → 0.85</li>
+    <li data-i18n="f3">Builds Onsorex, a live multilingual market app with a guarded LLM layer</li>
+  </ul>
+  <nav class="links">
+    <a href="https://www.linkedin.com/in/mnajjari" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="https://github.com/mohamadnajjari" target="_blank" rel="noopener">GitHub</a>
+    <a href="https://onsorex.com" target="_blank" rel="noopener">Onsorex</a>
+    <a href="mailto:mohamad.najjari.a.e@gmail.com" data-i18n="email">Email</a>
+  </nav>
+  <div class="rail-foot">
+    <div class="seg" role="group" aria-label="Language">
+      <button type="button" data-lang="en" aria-pressed="true">EN</button>
+      <button type="button" data-lang="de" aria-pressed="false">DE</button>
+    </div>
+  </div>
+</aside>
+
+<main>
+  <div class="frame" id="frame">
+    <i></i><i></i><i></i><i></i>
+    <div class="log" id="log" aria-live="polite">
+      <section class="intro" id="intro">
+        <h2 data-i18n="title">Pre-interview me</h2>
+        <p data-i18n="sub">Ask what you would ask in a first call. My AI assistant answers from my detailed CV and project notes, any time. It can make mistakes, so we can confirm anything important when we talk.</p>
+        <div class="suggest" id="suggest"></div>
+      </section>
+    </div>
+  </div>
+  <form id="form">
+    <label for="q" class="sr" hidden>Question</label>
+    <textarea id="q" rows="1" maxlength="600" data-i18n-ph="ph" placeholder="Ask about his experience…"></textarea>
+    <button id="send" type="submit" data-i18n="ask">Ask</button>
+  </form>
+  <p class="note" data-i18n="note">Questions are sent to Anthropic's Claude API to generate answers. This site doesn't store them. <a href="https://github.com/mohamadnajjari/ask-my-cv" target="_blank" rel="noopener">How it works</a></p>
+</main>
+
+<script>
+// Backend URL. Override for local testing with ?api=http://localhost:8000
+const API_URL = new URLSearchParams(location.search).get("api")
+  || "https://REPLACE-WITH-YOUR-BACKEND-URL";
+
+const T = {
+  en: {
+    role: "AI Engineer · AI integration & computer vision · Frankfurt am Main",
+    f1: "Took an industrial computer-vision model from research prototype toward production at BHS Intralogistics",
+    f2: "Master's thesis: ResNet-50 damage-depth model, F1-score 0.41 → 0.85",
+    f3: "Builds Onsorex, a live multilingual market app with a guarded LLM layer",
+    email: "Email",
+    title: "Pre-interview me",
+    sub: "Ask what you would ask in a first call. My AI assistant answers from my detailed CV and project notes, any time. It can make mistakes, so we can confirm anything important when we talk.",
+    ph: "Ask about his experience…",
+    ask: "Ask",
+    note: 'Questions are sent to Anthropic\'s Claude API to generate answers. This site doesn\'t store them. <a href="https://github.com/mohamadnajjari/ask-my-cv" target="_blank" rel="noopener">How it works</a>',
+    sources: "Based on",
+    neterr: "Couldn't reach the assistant. Check your connection and try again, or email Mohammad directly.",
+    q: [
+      "Tell me about yourself in one minute.",
+      "What did he build at BHS Intralogistics?",
+      "How is Onsorex built, and how does it keep AI output safe?",
+      "Is he a fit for an AI integration role in manufacturing?",
+    ],
+  },
+  de: {
+    role: "AI Engineer · KI-Integration & Computer Vision · Frankfurt am Main",
+    f1: "Hat bei der BHS Intralogistics ein industrielles Computer-Vision-Modell vom Prototyp in Richtung Produktion gebracht",
+    f2: "Masterarbeit: ResNet-50-Modell zur Schadenstiefe, F1-Score 0,41 → 0,85",
+    f3: "Entwickelt Onsorex, eine mehrsprachige Markt-App mit abgesicherter LLM-Schicht",
+    email: "E-Mail",
+    title: "Vorab-Interview mit mir",
+    sub: "Stellen Sie die Fragen, die Sie in einem ersten Gespräch stellen würden. Mein KI-Assistent antwortet jederzeit auf Basis meines ausführlichen Lebenslaufs und meiner Projektnotizen. Er kann Fehler machen – Wichtiges klären wir gern im Gespräch.",
+    ph: "Ihre Frage…",
+    ask: "Fragen",
+    note: 'Fragen werden zur Beantwortung an die Claude-API von Anthropic gesendet. Diese Seite speichert sie nicht. <a href="https://github.com/mohamadnajjari/ask-my-cv" target="_blank" rel="noopener">So funktioniert es</a>',
+    sources: "Quellen",
+    neterr: "Der Assistent ist nicht erreichbar. Bitte Verbindung prüfen und erneut versuchen oder Mohammad direkt per E-Mail kontaktieren.",
+    q: [
+      "Stellen Sie sich kurz vor.",
+      "Was hat er bei der BHS Intralogistics entwickelt?",
+      "Wie ist Onsorex aufgebaut?",
+      "Passt er zu einer Rolle in der KI-Integration in der Fertigung?",
+    ],
+  },
+};
+
+const $ = (id) => document.getElementById(id);
+const log = $("log"), form = $("form"), q = $("q"), send = $("send"), frame = $("frame");
+let lang = (navigator.language || "en").toLowerCase().startsWith("de") ? "de" : "en";
+const history = [];
+
+function setLang(l) {
+  lang = l;
+  document.documentElement.lang = l;
+  document.querySelectorAll("[data-i18n]").forEach((el) => {
+    const v = T[l][el.dataset.i18n];
+    if (el.dataset.i18n === "note") el.innerHTML = v; else el.textContent = v;
+  });
+  q.placeholder = T[l].ph;
+  document.querySelectorAll(".seg button").forEach((b) => b.setAttribute("aria-pressed", b.dataset.lang === l));
+  const s = $("suggest"); s.textContent = "";
+  T[l].q.forEach((text) => {
+    const b = document.createElement("button");
+    b.type = "button"; b.textContent = text;
+    b.onclick = () => ask(text);
+    s.appendChild(b);
+  });
+}
+
+// Minimal, safe Markdown: escape everything, then allow bold, links, bullets.
+function md(src) {
+  const esc = src.replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+  const inline = (s) => s
+    .replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")
+    .replace(/\*(.+?)\*/g, "<em>$1</em>")
+    .replace(/\[([^\]]+)\]\((https?:\/\/[^\s)]+|mailto:[^\s)]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>');
+  const out = []; let list = null;
+  for (const line of esc.split("\n")) {
+    const m = line.match(/^\s*[-*•]\s+(.*)/);
+    if (m) { if (!list) { list = []; } list.push(`<li>${inline(m[1])}</li>`); continue; }
+    if (list) { out.push(`<ul>${list.join("")}</ul>`); list = null; }
+    if (line.trim()) out.push(`<p>${inline(line)}</p>`);
+  }
+  if (list) out.push(`<ul>${list.join("")}</ul>`);
+  return out.join("");
+}
+
+function add(cls, html) {
+  const el = document.createElement("div");
+  el.className = "msg " + cls;
+  el.innerHTML = html;
+  log.appendChild(el);
+  log.scrollTop = log.scrollHeight;
+  return el;
+}
+
+async function ask(text) {
+  text = text.trim();
+  if (!text || send.disabled) return;
+  $("intro")?.remove();
+  add("user", md(text).replace(/^<p>|<\/p>$/g, ""));
+  history.push({ role: "user", content: text });
+  q.value = ""; autosize();
+  send.disabled = true; frame.classList.add("thinking");
+  try {
+    const r = await fetch(API_URL.replace(/\/$/, "") + "/api/chat", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ messages: history.slice(-16) }),
+    });
+    const data = await r.json().catch(() => ({}));
+    if (!r.ok) throw new Error(typeof data.detail === "string" ? data.detail : T[lang].neterr);
+    history.push({ role: "assistant", content: data.answer });
+    const src = (data.sources || []).length
+      ? `<div class="src">${T[lang].sources}: ${data.sources.map((s) => s.split(" › ").pop()).join("; ").replace(/[<>&]/g, "")}</div>` : "";
+    add("bot", md(data.answer) + src);
+  } catch (e) {
+    history.pop();
+    add("err", md(e.message && !/fetch|network/i.test(e.message) ? e.message : T[lang].neterr));
+  } finally {
+    send.disabled = false; frame.classList.remove("thinking"); q.focus();
+  }
+}
+
+function autosize() { q.style.height = "auto"; q.style.height = Math.min(q.scrollHeight, 140) + "px"; }
+q.addEventListener("input", autosize);
+q.addEventListener("keydown", (e) => { if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); ask(q.value); } });
+form.addEventListener("submit", (e) => { e.preventDefault(); ask(q.value); });
+document.querySelectorAll(".seg button").forEach((b) => (b.onclick = () => setLang(b.dataset.lang)));
+
+setLang(lang);
+requestAnimationFrame(() => document.body.classList.add("loaded"));
+</script>
+</body>
+</html>

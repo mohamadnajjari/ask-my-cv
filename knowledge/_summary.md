@@ -1,0 +1,8 @@
+- Name: Mohammad Najjari. Based in Frankfurt am Main, Germany. Allowed to work full time in Germany. Available to start as soon as possible.
+- Looking for full-time roles: AI Engineer, AI Integration Engineer, Computer Vision Engineer; also open to Data Engineer, Data Analyst and Data Scientist roles. On site in Frankfurt, hybrid within about 100 km of Frankfurt, or remote anywhere in Germany. Open to travel.
+- Education: M.Eng. Artificial Intelligence for Smart Sensors and Actuators, Deggendorf Institute of Technology (03/2023–03/2026, grade 2.1).
+- Most recent employer: BHS Intralogistics GmbH, Neutraubling (04/2024–12/2025) – working student, master's thesis and then Technology Developer and AI Engineer (computer vision for industrial damage inspection).
+- Current: building Onsorex (onsorex.com, since 04/2026), a live multilingual web app that shows market prices and explains them in plain language. Its LLM layer is built and tested but not yet switched on in production; alerts are the next phase.
+- Earlier: founder and developer of the online marketplace Irantimche.com (01/2019–03/2023); freelance web developer (2018–2019).
+- Languages: Persian (native), English (C1), German (B1, improving).
+- Reference letter and employment reference (Arbeitszeugnis) from BHS available on request.

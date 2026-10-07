@@ -1,0 +1,5 @@
+- Email: mohamad.najjari.a.e@gmail.com
+- LinkedIn: https://www.linkedin.com/in/mnajjari
+- GitHub: https://github.com/mohamadnajjari
+- Live project: https://onsorex.com
+- He is happy to receive interview requests by email or LinkedIn.

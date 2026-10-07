@@ -262,3 +262,20 @@ def test_a_german_question_finds_english_passages_through_its_topic():
     client, fake = make()
     assert kinds(client, "Was hat er in seiner Masterarbeit konkret erreicht?") == ["ai"]
     assert "5,886" in fake.calls[0]["system"]
+
+
+def test_a_cv_change_empties_the_answer_cache(tmp_path):
+    kb = tmp_path / "kb"
+    kb.mkdir()
+    for f in KB.iterdir():
+        if f.is_file():
+            (kb / f.name).write_bytes(f.read_bytes())
+    data = tmp_path / "data"
+    data.mkdir()
+    first = TestClient(build_app(Settings(knowledge_dir=kb, llm_mode="test", data_dir=data), client=FakeClaude()))
+    assert kinds(first, "Which Docker Compose setups did he build?") == ["ai"]
+    (kb / "projects.md").write_text((kb / "projects.md").read_text() + "\n# New project\nA new thing.\n")
+    fake = FakeClaude()
+    updated = TestClient(build_app(Settings(knowledge_dir=kb, llm_mode="test", data_dir=data), client=fake))
+    assert kinds(updated, "Which Docker Compose setups did he build?") == ["ai"]  # not the old answer
+    assert len(fake.calls) == 1

@@ -5,6 +5,7 @@ The Anthropic API key lives only here, on the server. The static chat page
 """
 from __future__ import annotations
 
+import hashlib
 import ipaddress
 import json
 import logging
@@ -71,7 +72,13 @@ def build_app(settings: Settings | None = None, client=None) -> FastAPI:
     assistant = CVAssistant(retriever, summary, contact, client, settings.model,
                             settings.max_output_tokens, settings.max_history_messages)
     prepared = PreparedAnswers(settings.knowledge_dir / "answers.json")
-    cache = AnswerCache(settings.data_dir / "answers-cache.json" if settings.data_dir else None)
+    # Fingerprint of everything the answers come from: a CV change empties the cache.
+    knowledge = hashlib.sha256()
+    for path in sorted(settings.knowledge_dir.iterdir()):
+        if path.suffix in (".md", ".json"):
+            knowledge.update(path.name.encode() + b"\0" + path.read_bytes())
+    cache = AnswerCache(settings.data_dir / "answers-cache.json" if settings.data_dir else None,
+                        version=knowledge.hexdigest()[:16])
     limiter = RateLimiter(settings.rate_limit_per_ip, settings.rate_limit_window, settings.daily_cap)
     quota = DailyQuota(settings.ai_quota_per_ip, settings.ai_answers_per_day)
     budget = Budget(

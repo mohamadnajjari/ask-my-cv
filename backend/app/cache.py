@@ -4,7 +4,8 @@ from the stored answer, without a model call (0 tokens).
 Only single questions are cached (a follow-up depends on its conversation). The key is the
 language plus the question's content words, sorted, so word order, punctuation and case don't
 matter. Entries expire after `ttl_days`; at most `max_entries` are kept (the oldest go first).
-Saved to DATA_DIR like the budget, so a restart keeps them.
+Saved to DATA_DIR like the budget, so a restart keeps them. `version` is a fingerprint of the
+knowledge files: after any CV change, answers stored for the old version are never served again.
 """
 from __future__ import annotations
 
@@ -21,9 +22,10 @@ from .retrieval import tokenize
 
 class AnswerCache:
     def __init__(self, path: Path | None, ttl_days: int = 30, max_entries: int = 500,
-                 clock=time.time) -> None:
+                 clock=time.time, version: str = "") -> None:
         self.path, self.ttl, self.max = path, ttl_days * 86_400, max_entries
         self.clock = clock
+        self.version = version
         self.lock = Lock()
         self.entries: dict[str, dict[str, Any]] = {}
         if path is not None and path.is_file():
@@ -31,11 +33,12 @@ class AnswerCache:
                 self.entries = json.loads(path.read_text(encoding="utf-8"))
             except (ValueError, OSError):
                 self.entries = {}
+        # Answers from an older CV are dropped (and gone from the file with the next save).
+        self.entries = {k: v for k, v in self.entries.items() if k.startswith(f"{version}:")}
 
-    @staticmethod
-    def key(question: str, lang: str) -> str | None:
+    def key(self, question: str, lang: str) -> str | None:
         words = sorted(set(tokenize(question)))
-        return f"{lang}:{' '.join(words)}" if words else None
+        return f"{self.version}:{lang}:{' '.join(words)}" if words else None
 
     def get(self, question: str, lang: str) -> dict[str, Any] | None:
         key = self.key(question, lang)

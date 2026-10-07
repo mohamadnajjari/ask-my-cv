@@ -422,9 +422,9 @@
    ]
   },
   "a": {
-   "en": "Email: mohamad.najjari.a.e@gmail.com · LinkedIn: https://www.linkedin.com/in/mnajjari · GitHub: https://github.com/mohamadnajjari. He is happy to receive interview requests by email or LinkedIn.",
-   "de": "E-Mail: mohamad.najjari.a.e@gmail.com · LinkedIn: https://www.linkedin.com/in/mnajjari · GitHub: https://github.com/mohamadnajjari. Er freut sich über Einladungen zu Vorstellungsgesprächen per E-Mail oder LinkedIn.",
-   "fa": "ایمیل: mohamad.najjari.a.e@gmail.com · لینکدین: https://www.linkedin.com/in/mnajjari · گیت‌هاب: https://github.com/mohamadnajjari. او از دعوت به مصاحبه از طریق ایمیل یا لینکدین استقبال می‌کند."
+   "en": "Email: [mohamad.najjari.a.e@gmail.com](mailto:mohamad.najjari.a.e@gmail.com) · LinkedIn: [linkedin.com/in/mnajjari](https://www.linkedin.com/in/mnajjari) · GitHub: [github.com/mohamadnajjari](https://github.com/mohamadnajjari). He is happy to receive interview requests by email or LinkedIn.",
+   "de": "E-Mail: [mohamad.najjari.a.e@gmail.com](mailto:mohamad.najjari.a.e@gmail.com) · LinkedIn: [linkedin.com/in/mnajjari](https://www.linkedin.com/in/mnajjari) · GitHub: [github.com/mohamadnajjari](https://github.com/mohamadnajjari). Er freut sich über Einladungen zu Vorstellungsgesprächen per E-Mail oder LinkedIn.",
+   "fa": "ایمیل: [mohamad.najjari.a.e@gmail.com](mailto:mohamad.najjari.a.e@gmail.com) · لینکدین: [linkedin.com/in/mnajjari](https://www.linkedin.com/in/mnajjari) · گیت‌هاب: [github.com/mohamadnajjari](https://github.com/mohamadnajjari). او از دعوت به مصاحبه از طریق ایمیل یا لینکدین استقبال می‌کند."
   }
  },
  {
@@ -508,9 +508,9 @@
    ]
   },
   "a": {
-   "en": "Onsorex (onsorex.com) is a live multilingual web app he designed and built alone: market prices in your own currency and language with plain-language explanations (Next.js, FastAPI, PostgreSQL/TimescaleDB, Docker on Hetzner). Its LLM layer is built and tested with guardrails but not yet switched on in production.",
-   "de": "Onsorex (onsorex.com) ist eine live laufende, mehrsprachige Web-App, die er allein entworfen und gebaut hat: Marktpreise in eigener Währung und Sprache mit verständlichen Erklärungen (Next.js, FastAPI, PostgreSQL/TimescaleDB, Docker bei Hetzner). Die LLM-Schicht ist mit Guardrails gebaut und getestet, aber in Produktion noch nicht aktiv.",
-   "fa": "Onsorex (onsorex.com) یک وب‌اپلیکیشن چندزبانه فعال است که او به تنهایی طراحی کرده و ساخته است: قیمت بازارها به ارز و زبان خود کاربر همراه با توضیح ساده (Next.js، FastAPI، PostgreSQL/TimescaleDB، Docker روی Hetzner). لایه هوش مصنوعی آن ساخته و آزمایش شده ولی هنوز در نسخه اصلی فعال نیست."
+   "en": "Onsorex ([onsorex.com](https://onsorex.com)) is a live multilingual web app he designed and built alone: market prices in your own currency and language with plain-language explanations (Next.js, FastAPI, PostgreSQL/TimescaleDB, Docker on Hetzner). Its LLM layer is built and tested with guardrails but not yet switched on in production.",
+   "de": "Onsorex ([onsorex.com](https://onsorex.com)) ist eine live laufende, mehrsprachige Web-App, die er allein entworfen und gebaut hat: Marktpreise in eigener Währung und Sprache mit verständlichen Erklärungen (Next.js, FastAPI, PostgreSQL/TimescaleDB, Docker bei Hetzner). Die LLM-Schicht ist mit Guardrails gebaut und getestet, aber in Produktion noch nicht aktiv.",
+   "fa": "Onsorex ([onsorex.com](https://onsorex.com)) یک وب‌اپلیکیشن چندزبانه فعال است که او به تنهایی طراحی کرده و ساخته است: قیمت بازارها به ارز و زبان خود کاربر همراه با توضیح ساده (Next.js، FastAPI، PostgreSQL/TimescaleDB، Docker روی Hetzner). لایه هوش مصنوعی آن ساخته و آزمایش شده ولی هنوز در نسخه اصلی فعال نیست."
   }
  },
  {
@@ -589,9 +589,9 @@
    ]
   },
   "a": {
-   "en": "Salary is best discussed with Mohammad directly. You can reach him at mohamad.najjari.a.e@gmail.com or on LinkedIn.",
-   "de": "Das Gehalt bespricht man am besten direkt mit Mohammad: mohamad.najjari.a.e@gmail.com oder über LinkedIn.",
-   "fa": "درباره حقوق بهتر است مستقیم با محمد صحبت کنید: mohamad.najjari.a.e@gmail.com یا لینکدین."
+   "en": "Salary is best discussed with Mohammad directly. You can reach him at [mohamad.najjari.a.e@gmail.com](mailto:mohamad.najjari.a.e@gmail.com) or on LinkedIn.",
+   "de": "Das Gehalt bespricht man am besten direkt mit Mohammad: [mohamad.najjari.a.e@gmail.com](mailto:mohamad.najjari.a.e@gmail.com) oder über LinkedIn.",
+   "fa": "درباره حقوق بهتر است مستقیم با محمد صحبت کنید: [mohamad.najjari.a.e@gmail.com](mailto:mohamad.najjari.a.e@gmail.com) یا لینکدین."
   }
  }
 ]

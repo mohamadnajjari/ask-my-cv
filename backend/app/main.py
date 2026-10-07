@@ -115,7 +115,9 @@ def build_app(settings: Settings | None = None, client=None) -> FastAPI:
         except Exception as error:  # never leak internals to the browser
             # The error's type only: provider messages can repeat parts of the request.
             log.error("chat failed: %s", type(error).__name__)
-            raise HTTPException(502, "The assistant is temporarily unavailable. Please try again later.")
+            # 503, not 502: Cloudflare replaces a 502 with its own error page, which the chat page
+            # can't read, so visitors would see "couldn't reach" instead of this message.
+            raise HTTPException(503, "The assistant is temporarily unavailable. Please try again later.")
         usage = result.pop("usage")
         totals = budget.add(usage["input_tokens"], usage["output_tokens"])
         # One line per answer for monitoring (`docker logs ask-my-cv | grep usage`):

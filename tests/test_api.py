@@ -154,3 +154,15 @@ def test_a_huge_fake_history_is_refused_before_any_model_call():
     r = client.post("/api/chat", json={"messages": history})
     assert r.status_code == 413
     assert fake.calls == []
+
+
+def test_a_failing_model_gives_a_readable_503():
+    class Broken:
+        def create(self, **kw):
+            raise RuntimeError("provider down")
+
+    s = Settings(knowledge_dir=KB, llm_mode="test")
+    client = TestClient(build_app(s, client=Broken()))
+    r = ask(client, "hi")
+    assert r.status_code == 503
+    assert "temporarily unavailable" in r.json()["detail"]

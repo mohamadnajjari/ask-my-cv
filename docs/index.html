@@ -177,9 +177,12 @@
 </main>
 
 <script>
-// Backend URL. Override for local testing with ?api=http://localhost:8000
-const API_URL = new URLSearchParams(location.search).get("api")
-  || "https://REPLACE-WITH-YOUR-BACKEND-URL";
+// Backend URL. For local testing only, ?api=http://localhost:8000 overrides it; any other
+// address is ignored, so nobody can send a link that routes visitors' questions elsewhere.
+const API_OVERRIDE = new URLSearchParams(location.search).get("api") || "";
+const API_URL = /^http:\/\/(localhost|127\.0\.0\.1)(:\d+)?$/.test(API_OVERRIDE)
+  ? API_OVERRIDE
+  : "https://cv-api.onsorex.com";
 
 const T = {
   en: {

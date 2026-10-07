@@ -84,6 +84,7 @@ class CVAssistant:
     def answer(self, messages: list[dict[str, str]]) -> dict[str, Any]:
         convo: list[dict[str, Any]] = [dict(m) for m in messages]
         sources: dict[str, None] = {}
+        usage = {"input_tokens": 0, "output_tokens": 0}  # every call of this answer, for the budget
         for _ in range(self.max_tool_rounds + 1):
             resp = self.client.create(
                 model=self.model,
@@ -92,9 +93,11 @@ class CVAssistant:
                 tools=TOOLS,
                 messages=convo,
             )
+            for key in usage:
+                usage[key] += int(getattr(getattr(resp, "usage", None), key, 0) or 0)
             if resp.stop_reason != "tool_use":
                 text = "".join(b.text for b in resp.content if b.type == "text").strip()
-                return {"answer": text, "sources": list(sources)}
+                return {"answer": text, "sources": list(sources), "usage": usage}
             convo.append({"role": "assistant", "content": resp.content})
             results = []
             for block in resp.content:
@@ -107,6 +110,7 @@ class CVAssistant:
         return {
             "answer": "Sorry, I could not find a clear answer. Please contact Mohammad directly.",
             "sources": list(sources),
+            "usage": usage,
         }
 
 

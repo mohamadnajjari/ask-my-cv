@@ -13,10 +13,17 @@ def _int(name: str, default: int) -> int:
         return default
 
 
+def _float(name: str, default: float) -> float:
+    try:
+        return float(os.getenv(name, default))
+    except ValueError:
+        return default
+
+
 @dataclass(frozen=True)
 class Settings:
     api_key: str = field(default_factory=lambda: os.getenv("ANTHROPIC_API_KEY", ""))
-    model: str = field(default_factory=lambda: os.getenv("MODEL", "claude-haiku-4-5-20251001"))
+    model: str = field(default_factory=lambda: os.getenv("MODEL", "claude-haiku-4-5"))
     llm_mode: str = field(default_factory=lambda: os.getenv("LLM_MODE", "anthropic").lower())
     allowed_origins: tuple[str, ...] = field(
         default_factory=lambda: tuple(
@@ -31,12 +38,23 @@ class Settings:
     trust_proxy: bool = field(
         default_factory=lambda: os.getenv("TRUST_PROXY_HEADERS", "false").lower() == "true"
     )
+    # Money (USD): the day's and the month's budget, and the model's price per million tokens
+    # (Claude Haiku 4.5: $1 input, $5 output). Change the prices with the model.
+    daily_budget_usd: float = field(default_factory=lambda: _float("DAILY_BUDGET_USD", 0.50))
+    monthly_budget_usd: float = field(default_factory=lambda: _float("MONTHLY_BUDGET_USD", 5.0))
+    usd_per_mtok_in: float = field(default_factory=lambda: _float("INPUT_USD_PER_MTOK", 1.0))
+    usd_per_mtok_out: float = field(default_factory=lambda: _float("OUTPUT_USD_PER_MTOK", 5.0))
+    # Where the budget's totals survive restarts; unset: memory only (tests, local runs).
+    data_dir: Path | None = field(
+        default_factory=lambda: Path(os.environ["DATA_DIR"]) if os.getenv("DATA_DIR") else None
+    )
     knowledge_dir: Path = field(
         default_factory=lambda: Path(
             os.getenv("KNOWLEDGE_DIR", Path(__file__).resolve().parents[2] / "knowledge")
         )
     )
-    max_message_chars: int = 600
+    max_message_chars: int = 600  # the visitor's newest question
+    max_conversation_chars: int = 6000  # everything sent along: no huge fake histories
     max_history_turns: int = 8
     max_output_tokens: int = 700
     max_tool_rounds: int = 3

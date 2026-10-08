@@ -4,3 +4,5 @@ __pycache__/
 .venv/
 .pytest_cache/
 .mcp.json
+# The original portrait; the page uses the small, metadata-free WebP copies in docs/
+/image.jpg
